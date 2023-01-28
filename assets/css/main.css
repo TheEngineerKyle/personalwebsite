@@ -99,6 +99,9 @@ input, select, textarea {
 		line-height: 1.75em;
 	}
 
+
+	
+
 	a {
 		-moz-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 		-webkit-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
@@ -107,14 +110,18 @@ input, select, textarea {
 		border-bottom: dotted 1px;
 		color: #357fdfb2;
 		text-decoration: none;
+		
 	}
 
 		a:hover {
 			border-bottom-color: transparent;
-			color: #357fdfb2 !important;
-			text-decoration: none;
+			color: #81b2df79 !important;
+			text-decoration: none
 		}
 
+		
+
+		
 	strong, b {
 		color: #787878;
 		font-weight: 400;
@@ -1788,6 +1795,7 @@ input, select, textarea {
 		font-size: 2em;
 	}
 
+
 /* Form */
 
 	form {
@@ -2637,6 +2645,13 @@ input, select, textarea {
 			margin: 0 0 1em 0;
 			width: 6.25em;
 		}
+
+
+
+
+		  
+
+		
 
 /* Footer */
 
