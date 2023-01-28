@@ -102,12 +102,15 @@
 					popupCloserText: '',
 					popupLoaderText: '',
 					selector: '.work-item a.image',
-					usePopupCaption: false,
+					usePopupCaption: true,
 					usePopupDefaultStyling: false,
 					usePopupEasyClose: false,
 					usePopupNav: true,
 					windowMargin: (breakpoints.active('<=small') ? 0 : 50)
 				});
+
+
+			
 
 			});
 
