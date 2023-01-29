@@ -5,9 +5,6 @@ RewriteRule ^(.*)$ $1.html [NC,L]
 
 
 
-RewriteCond %{HTTP_HOST} ^kylelinde\.tld$ [NC]
-RewriteRule ^(.+)$ http://www.kylelinde.tld/$1 [R=301,L]
-
 RewriteEngine On
 RewriteCond %{HTTPS} off
 RewriteCond %{HTTP:X-Forwarded-Proto} !https
