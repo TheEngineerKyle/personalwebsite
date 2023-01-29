@@ -5,8 +5,8 @@ RewriteRule ^(.*)$ $1.html [NC,L]
 
 
 
-RewriteCond %{HTTP_HOST} ^domain\.tld$ [NC]
-RewriteRule ^(.+)$ http://www.domain.tld/$1 [R=301,L]
+RewriteCond %{HTTP_HOST} ^kylelinde\.tld$ [NC]
+RewriteRule ^(.+)$ http://www.kylelinde.tld/$1 [R=301,L]
 
 RewriteEngine On
 RewriteCond %{HTTPS} off
