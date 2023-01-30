@@ -70,11 +70,9 @@ input, select, textarea {
 
 	html {
 		box-sizing: border-box;
+		scroll-behavior: smooth;
 	}
 
-	html {
-		scroll-behavior: smooth;
-		}
 
 	*, *:before, *:after {
 		box-sizing: inherit;
@@ -133,9 +131,11 @@ input, select, textarea {
 		font-weight: 400;
 	}
 
+	
 	em, i {
 		font-style: italic;
 	}
+
 
 	p {
 		margin: 0 0 2em 0;
@@ -154,8 +154,8 @@ input, select, textarea {
 		}
 
 	h1 {
-		font-size: 2em;
-		line-height: 1.5em;
+		font-size: 2.25em;
+		line-height: 0.75em;
 	}
 
 	h2 {
@@ -165,7 +165,7 @@ input, select, textarea {
 
 	h3 {
 		font-size: 1.25em;
-		line-height: 1.5em;
+		line-height: 1.75em;
 	}
 
 	h4 {
