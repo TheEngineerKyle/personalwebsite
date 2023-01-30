@@ -81,7 +81,7 @@ input, select, textarea {
 	}
 
 	body {
-		background: #fff;
+		background: rgba(224, 223, 223, 0.834);
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -2068,11 +2068,14 @@ input, select, textarea {
 			display: block;
 			height: 100%;
 			left: 0;
-			opacity: 0.5;
+			opacity: 0;
 			position: absolute;
 			top: 0;
 			width: 100%;
 		}
+
+		
+/* ------ ^ opacity defailt 0.5----- */
 
 		.image.thumb {
 			text-align: center;
