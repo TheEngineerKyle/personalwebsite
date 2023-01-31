@@ -2114,12 +2114,12 @@ input, select, textarea {
 			}
 
 			.image.thumb:hover:after {
-				opacity: 1.0;
+				opacity: 0.75;
 			}
 
 			.image.thumb:hover:before {
 				background: url("images/overlay.png"), url("images/overlay.png");
-				opacity: 1.0;
+				opacity: 0.75;
 			}
 
 		.image img {
@@ -2143,6 +2143,7 @@ input, select, textarea {
 			max-width: 40%;
 		}
 
+		
 			.image.left img, .image.right img {
 				width: 100%;
 			}
