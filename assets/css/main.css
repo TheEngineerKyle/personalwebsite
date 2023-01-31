@@ -2619,7 +2619,7 @@ input, select, textarea {
 		background-color: #1f1815;
 		background-attachment: scroll,								scroll;
 		/* ---------------------SIDE HEADER IMAGE----------------------------------- */
-		background-image: url("images/overlay.png"), url("images/1a.jpg");
+		background-image: url("images/overlay.png"), url("images/2edit.jpg");
 		background-position: top left,							top left;
 		background-repeat: repeat,								no-repeat;
 		background-size: auto,								150%;
