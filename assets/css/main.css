@@ -2616,10 +2616,10 @@ input, select, textarea {
 		-webkit-justify-content: space-between;
 		-ms-justify-content: space-between;
 		justify-content: space-between;
-		background-color: #1f1815;
+		background-color: #949fcd;
 		background-attachment: scroll,								scroll;
 		/* ---------------------SIDE HEADER IMAGE----------------------------------- */
-		background-image: url("images/overlay.png"), url("images/24.jpg");
+		background-image: url("images/overlay.png"), url("images/26.jpg");
 		background-position: top left,							top left;
 		background-repeat: repeat,								no-repeat;
 		background-size: auto,								150%;
