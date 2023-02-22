@@ -109,7 +109,7 @@ input, select, textarea {
 		-webkit-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 		-ms-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 		transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
-		border-bottom: dotted 1px;
+		border-bottom: solid 1px;
 		color: #3c8cf496;
 		text-decoration: none;
 		
@@ -119,11 +119,9 @@ input, select, textarea {
 
 		a:hover {
 			border-bottom-color: transparent;
-			color: #3c73f496 !important;
+			color: #3a67d07b !important;
 			text-decoration: none
 		}
-
-		
 
 		
 	strong, b {
