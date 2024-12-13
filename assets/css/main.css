@@ -2089,6 +2089,7 @@ input, select, textarea {
 		border: solid 2px hsla(0, 1%, 44%, 0.52);
 		display: inline-block;
 		position: relative;
+		max-width: 80%;
 	}
 			.drawningimage.fit {
 			display: block;
