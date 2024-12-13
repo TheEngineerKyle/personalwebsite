@@ -6,10 +6,10 @@ RewriteBase /
 ## Remove extensions
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^([^\.]+)$ $1.php [NC,L]
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
 
 ## Redirect from extensions to non-extensions
-RewriteCond %{THE_REQUEST} \s/+(.+?)\.php[\s?] [NC]
+RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
 RewriteRule ^ /%1 [R=301,NE,L]
 
 ## Server Only
@@ -19,7 +19,7 @@ RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
 RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
 
 ## Redirect from non-www - www
-RewriteCond %{HTTP_HOST} ^yourdomain\.com$ [NC]
+RewriteCond %{HTTP_HOST} ^kylelinde\.com$ [NC]
 RewriteRule ^(.*)$ http://www.kylelinde.com/$1 [L, R=301]
 
 ## SSL Redirect
@@ -29,15 +29,13 @@ RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}
 
 ## Create Error Pages
 ErrorDocument 404 /errors/404.html
-ErrorDocument 403 /errors/403.html
-ErrorDocument 500 /errors/500.html
 
 ## Redirect non-existing pages to index.php
 Options +SymLinksIfOwnerMatch
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /index.php [L]
+RewriteRule . /index.html [L]
 
 ## Redirect to a URL on the same domain or host
 Redirect 301 "/test1" "/test2"
