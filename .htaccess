@@ -1,9 +1,6 @@
 RewriteEngine on
+Options +FollowSymlinks -MultiViews
+RewriteRule ^$ /index.html [R,L]
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME}\.html -f
-RewriteRule ^(.*)$ $1.html [NC,L]
-
-RewriteEngine on
-RewriteCond %{HTTPS} off
-RewriteCond %{HTTP:X-Forwarded-Proto} !https
-RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+RewriteCond  %{QUERY_STRING} !^url=
+RewriteRule ^([^/]+)/([^/]+)/?$ /index.php?url=$1/$2 [R,L,QSA]
