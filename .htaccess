@@ -1,8 +1,6 @@
 RewriteEngine on
 Options +FollowSymlinks -MultiViews
 RewriteRule ^$ /index.html [R,L]
-RewriteRule ^$ /resume.html [R,L]
-RewriteRule ^$ /projects.html [R,L]
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond  %{QUERY_STRING} !^url=
 RewriteRule ^([^/]+)/([^/]+)/?$ /index.php?url=$1/$2 [R,L,QSA]
