@@ -2909,9 +2909,7 @@ input, select, textarea {
 	border-radius: 0.35em;
 	box-shadow: 0 0.1em 0.15em 0 rgba(0, 0, 0, 0.15);
 	overflow: hidden;
-	padding-bottom: 0em;
-	padding-left: 3em;
-	padding-right: 3em;
+	padding: 1em;
 }
 
 	.poptrox-popup .loader {
