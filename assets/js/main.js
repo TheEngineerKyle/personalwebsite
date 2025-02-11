@@ -17,6 +17,27 @@
 		};
 
 
+	document.addEventListener("DOMContentLoaded", function () {
+		document.querySelectorAll("a[href^='#']").forEach(anchor => {
+			anchor.addEventListener("click", function (event) {
+				const targetId = this.getAttribute("href").substring(1);
+				const targetElement = document.getElementById(targetId);
+
+				if (targetElement) {
+					event.preventDefault(); // Prevent default jump behavior
+					targetElement.scrollIntoView({ behavior: "smooth" });
+
+					// Remove # from URL without affecting history
+					history.pushState(null, "", window.location.pathname);
+				}
+			});
+		});
+	});
+
+
+
+		
+
 	// Breakpoints.
 	breakpoints({
 		xlarge: ['1281px', '1800px'],
