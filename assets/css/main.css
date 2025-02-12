@@ -125,8 +125,10 @@ input, select, textarea {
 		-ms-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 		transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 		border-bottom: solid 1px;
-		color: #3c8cf496;
+		/* kyle */
+		color: #508ad696;
 		text-decoration: none;
+		
 		
 	}
 
@@ -134,8 +136,9 @@ input, select, textarea {
 
 		a:hover {
 			border-bottom-color: transparent;
-			color: #3c73f496 !important;
-			text-decoration: none
+			color: #7dc3e8 !important;
+			text-decoration: none;
+			
 		}
 
 		
@@ -2327,13 +2330,16 @@ input, select, textarea {
 	ul.labeled-icons {
 		list-style: none;
 		padding: 0;
+		color: #ffffffb6;
+		font-size: 1.1em;
 	}
 
 		ul.labeled-icons li {
 			line-height: 1.75em;
-			margin: 1.5em 0 0 0;
+			margin: 1em 0 0 0;
 			padding-left: 2.25em;
 			position: relative;
+			
 		}
 
 			ul.labeled-icons li:first-child {
@@ -2344,6 +2350,8 @@ input, select, textarea {
 				color: inherit;
 			}
 
+
+			/* kyle */
 			ul.labeled-icons li h3 {
 				color: #b2b2b2;
 				left: 0;
@@ -2351,7 +2359,13 @@ input, select, textarea {
 				text-align: center;
 				top: 0;
 				width: 1em;
+				
 			}
+
+			
+
+
+		
 
 /* Actions */
 
@@ -2579,7 +2593,7 @@ input, select, textarea {
 		input[type="button"]:hover,
 		.button:hover {
 			border-color: #357fdfb2;
-			color: #357fdfb2 !important;
+			color: #359edfb2 !important;
 		}
 
 		input[type="submit"]:active,
@@ -2771,7 +2785,7 @@ input, select, textarea {
 	#footer .icons {
 		margin: 1em 0 0 0;
 	}
-
+/*----------kyle------*/
 		#footer .icons a {
 			color: rgba(255, 255, 255, 0.5);
 		}
