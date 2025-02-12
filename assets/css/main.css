@@ -2151,8 +2151,6 @@ input, select, textarea {
 		}
 
 
-
-
 		.image.thumb.clear:after {
 				-moz-transition: opacity 0.2s ease-in-out;
 				-webkit-transition: opacity 0.2s ease-in-out;
