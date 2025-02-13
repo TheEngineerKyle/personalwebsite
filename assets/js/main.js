@@ -18,6 +18,22 @@
 
 
 	document.addEventListener("DOMContentLoaded", function () {
+		// Check if there's a hash in the URL before the page loads
+		if (window.location.hash) {
+			const targetId = window.location.hash.substring(1);
+			const targetElement = document.getElementById(targetId);
+
+			if (targetElement) {
+				// Remove hash immediately before rendering the page
+				history.replaceState(null, "", window.location.pathname);
+
+				// Scroll smoothly after a short delay to ensure proper positioning
+				setTimeout(() => {
+					targetElement.scrollIntoView({ behavior: "smooth" });
+				}, 10); // Small delay to allow DOM to settle
+			}
+		}
+
 		// Smooth scrolling for internal links
 		document.querySelectorAll("a[href^='#']").forEach(anchor => {
 			anchor.addEventListener("click", function (event) {
@@ -28,25 +44,13 @@
 					event.preventDefault();
 					targetElement.scrollIntoView({ behavior: "smooth" });
 
-					// Remove # from URL without affecting history
+					// Remove hash from URL without affecting history
 					history.pushState(null, "", window.location.pathname);
 				}
 			});
 		});
-
-		// If the page loads with a hash, scroll smoothly and remove #
-		if (window.location.hash) {
-			const targetId = window.location.hash.substring(1);
-			const targetElement = document.getElementById(targetId);
-
-			if (targetElement) {
-				targetElement.scrollIntoView({ behavior: "smooth" });
-
-				// Remove # from URL after scrolling
-				history.replaceState(null, "", window.location.pathname);
-			}
-		}
 	});
+
 
 
 
