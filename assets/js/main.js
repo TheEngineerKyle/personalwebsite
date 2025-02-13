@@ -18,13 +18,14 @@
 
 
 	document.addEventListener("DOMContentLoaded", function () {
+		// Smooth scrolling for internal links
 		document.querySelectorAll("a[href^='#']").forEach(anchor => {
 			anchor.addEventListener("click", function (event) {
 				const targetId = this.getAttribute("href").substring(1);
 				const targetElement = document.getElementById(targetId);
 
 				if (targetElement) {
-					event.preventDefault(); // Prevent default jump behavior
+					event.preventDefault();
 					targetElement.scrollIntoView({ behavior: "smooth" });
 
 					// Remove # from URL without affecting history
@@ -32,6 +33,19 @@
 				}
 			});
 		});
+
+		// If the page loads with a hash, scroll smoothly and remove #
+		if (window.location.hash) {
+			const targetId = window.location.hash.substring(1);
+			const targetElement = document.getElementById(targetId);
+
+			if (targetElement) {
+				targetElement.scrollIntoView({ behavior: "smooth" });
+
+				// Remove # from URL after scrolling
+				history.replaceState(null, "", window.location.pathname);
+			}
+		}
 	});
 
 
