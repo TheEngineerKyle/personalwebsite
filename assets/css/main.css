@@ -2633,7 +2633,7 @@ input, select, textarea {
 		input[type="button"].fit,
 		.button.fit {
 			min-width: 0;
-			width: 100%;
+			width: 40%;
 		}
 
 		input[type="submit"].small,
