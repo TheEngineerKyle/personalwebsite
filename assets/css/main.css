@@ -136,12 +136,11 @@ input, select, textarea {
 
 		a:hover {
 			border-bottom-color: transparent;
-			color: #7dc3e8 !important;
+			color: hwb(214 34% 4% / 0.698)!important;
 			text-decoration: none;
-			
 		}
 
-		
+
 
 		
 	strong, b {
@@ -2339,12 +2338,13 @@ input, select, textarea {
 		color: #ffffffb6;
 		font-size: 1.1em;
 	}
-
+/* kyle1 */
 		ul.labeled-icons li {
-			line-height: 1.75em;
+			line-height: 1.2em;
 			margin: 1em 0 0 0;
 			padding-left: 2.25em;
 			position: relative;
+	
 			
 		}
 
@@ -2353,8 +2353,10 @@ input, select, textarea {
 			}
 
 			ul.labeled-icons li a {
-				color: inherit;
+				color: hsl(0, 0%, 90%);
 			}
+
+			
 
 
 			/* kyle */
@@ -2365,6 +2367,7 @@ input, select, textarea {
 				text-align: center;
 				top: 0;
 				width: 1em;
+				
 				
 			}
 
@@ -3307,6 +3310,12 @@ input, select, textarea {
 					line-height: 1.75em;
 				}
 
+
+
+
+
+
+				
 		/* Header */
 
 			#header {
