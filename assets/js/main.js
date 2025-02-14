@@ -120,17 +120,7 @@
 		});
 	}
 
-	// RECAPTCHA.
-	function checkRecaptcha() {
-		var response = grecaptcha.getResponse();
-		console.log("CAPTCHA response:", response);  // Debugging: Check the CAPTCHA response
-		if (response.length === 0) {
-			alert("Please complete the CAPTCHA first.");
-		} else {
-			// If CAPTCHA is verified, allow download from GitHub
-			window.location.href = "https://kylelinde.com/KYLE_LINDE_2023_RESUME.pdf";  // GitHub file URL
-		}
-	}
+
 
 	// Lightbox gallery.
 

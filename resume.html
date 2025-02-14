@@ -10,6 +10,7 @@
 	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
+
 <body class="is-preload">
 	<!-- Header -->
 	<header id="header">
@@ -27,6 +28,18 @@
 				<button type="button" class="button fit primary icon solid fa-download"
 					onclick="checkRecaptcha();">Download</button>
 			</article>
+			<script>
+				function checkRecaptcha() {
+					var response = grecaptcha.getResponse();
+					console.log("CAPTCHA response:", response);  // Debugging: Check the CAPTCHA response
+					if (response.length === 0) {
+						alert("Please complete the CAPTCHA first.");
+					} else {
+						// If CAPTCHA is verified, allow download from GitHub
+						window.location.href = "https://www.kylelinde.com/KYLE_LINDE_2023_RESUME.pdf";  // GitHub file URL
+					}
+				}
+			</script>
 			<article class="col-12 col-12-large work-item">
 				<a href="images/resume.jpg" class="image fit thumb clear"><img src="images/resume.jpg" alt="" /></a>
 			</article>
