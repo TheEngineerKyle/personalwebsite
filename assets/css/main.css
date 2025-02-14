@@ -3131,7 +3131,7 @@ input, select, textarea {
 	body.is-touch .poptrox-popup .nav-next,
 	body.is-touch .poptrox-popup .nav-previous,
 	body.is-touch .poptrox-popup .closer {
-		opacity: 1.0 !important;
+		opacity: 0 !important;
 	}
 
 /* XLarge */
