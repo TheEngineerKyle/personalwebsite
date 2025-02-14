@@ -32,6 +32,9 @@
 								class="button fit primary icon solid fa-download">Download</a></li>
 
 						-->
+
+
+						
 <!-- Button to trigger CAPTCHA, with additional styling and icon -->
 <button id="downloadButton" type="button" class="button primary icon solid fa-download"
 	onclick="showCaptcha();">Download</button>
@@ -42,12 +45,14 @@
 </div>
 
 <script>
-	// This function shows the CAPTCHA
+	var captchaCompleted = false; // To track if CAPTCHA is completed
+
+	// This function shows the CAPTCHA when the "Download" button is clicked
 	function showCaptcha() {
 		// Show the CAPTCHA container
 		document.getElementById('recaptcha-container').style.display = 'block';
 
-		// Disable the button to prevent multiple clicks while CAPTCHA is being solved
+		// Disable the download button during CAPTCHA completion
 		document.getElementById('downloadButton').disabled = true;
 
 		// Add a listener for CAPTCHA completion
@@ -57,23 +62,33 @@
 				if (response.length === 0) {
 					alert("Please complete the CAPTCHA first.");
 				} else {
-					// Once CAPTCHA is completed, enable the download button
+					// If CAPTCHA is completed, enable the download button
+					captchaCompleted = true;
 					document.getElementById('downloadButton').disabled = false;
+					alert("CAPTCHA Completed! Click 'Download' again.");
 				}
 			}
 		});
 	}
 
-	// This function triggers the file download
+	// This function triggers the file download when clicked after CAPTCHA completion
 	function downloadFile() {
+		if (!captchaCompleted) {
+			alert("Please complete the CAPTCHA first.");
+			return; // Prevent download if CAPTCHA isn't completed
+		}
+
+		// Create a temporary <a> tag to trigger the download
 		var link = document.createElement('a');
 		link.href = "https://raw.githubusercontent.com/TheEngineerKyle/personalwebsite/main/images/resume.pdf";  // GitHub file URL
-		link.download = "resume.pdf";  // You can specify the desired file name
+		link.download = "resume.pdf";  // Desired file name
 
-		// Append the link to the body and trigger the download
+		// Append the link to the body and simulate a click to start the download
 		document.body.appendChild(link);
 		link.click();
 
+		// Optionally, remove the link after download
+		document.body.removeChild(link);
 	}
 </script>
 
