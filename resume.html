@@ -59,36 +59,37 @@
 								}
 
 								function verifyCaptcha(token) {
-									console.log("Sending CAPTCHA token to server...");  // Debugging: Check if token is sent
-									fetch('/api/verify-captcha', {
-										method: 'POST',
-										headers: { 'Content-Type': 'application/json' },
-										body: JSON.stringify({ token })
-									})
-										.then(response => {
-											console.log("Response status:", response.status);  // Check response status
-											return response.text();  // Get the raw response as text (instead of JSON)
+										console.log("Sending CAPTCHA token to server...");  // Debugging: Check if token is sent
+										fetch('/api/verify-captcha', {
+											method: 'POST',
+											headers: { 'Content-Type': 'application/json' },
+											body: JSON.stringify({ token })
 										})
-										.then(data => {
-											console.log("Raw response:", data);  // Log the raw response for debugging
-											try {
-												const jsonData = JSON.parse(data);  // Try parsing it as JSON
-												console.log("CAPTCHA verification result:", jsonData);  // Debugging: Check server response
-												if (jsonData.success) {
-													console.log("Redirecting to file...");
-													window.location.href = "https://raw.githubusercontent.com/TheEngineerKyle/personalwebsite/main/images/resume.pdf";  // GitHub file URL
-												} else {
-													alert("CAPTCHA verification failed.");
+											.then(response => {
+												console.log("Response status:", response.status);  // Log response status code (200, 404, etc.)
+												return response.text();  // Get the raw response as text (not JSON)
+											})
+											.then(data => {
+												console.log("Raw response:", data);  // Log the raw response for debugging
+												try {
+													const jsonData = JSON.parse(data);  // Try parsing it as JSON
+													console.log("CAPTCHA verification result:", jsonData);  // Log parsed response
+													if (jsonData.success) {
+														console.log("Redirecting to file...");
+														window.location.href = "https://raw.githubusercontent.com/TheEngineerKyle/personalwebsite/main/images/resume.pdf";  // GitHub file URL
+													} else {
+														alert("CAPTCHA verification failed.");
+													}
+												} catch (e) {
+													console.error("Error parsing response:", e);  // Log the error if the response isn't valid JSON
+													alert("Failed to parse CAPTCHA verification response.");
 												}
-											} catch (e) {
-												console.error("Error parsing response:", e);  // If the response isn't valid JSON
-												alert("Failed to parse CAPTCHA verification response.");
-											}
-										})
-										.catch(error => {
-											console.error('Error:', error);  // Debugging: Check if there’s an error with the fetch request
-										});
-								}
+											})
+											.catch(error => {
+												console.error('Error:', error);  // Log any fetch errors
+											});
+									}
+
 							</script>
 
 
