@@ -32,7 +32,6 @@
 								class="button fit primary icon solid fa-download">Download</a></li>
 
 						-->
-
 <!-- Button to trigger CAPTCHA, with additional styling and icon -->
 <button id="downloadButton" type="button" class="button primary icon solid fa-download"
 	onclick="showCaptcha();">Download</button>
@@ -74,14 +73,10 @@
 		document.body.appendChild(link);
 		link.click();
 
-		// Re-enable the button after the download starts
-		setTimeout(function () {
-			document.getElementById('downloadButton').disabled = false;
-		}, 500); // A short delay to ensure the download starts before re-enabling
-
-		// No need to remove the link now, as you mentioned
+		// No need to remove the link or re-enable the button now
 	}
 </script>
+
 
 
 
