@@ -34,7 +34,6 @@
 						-->
 
 
-						
 <!-- Button to trigger CAPTCHA, with additional styling and icon -->
 <button id="downloadButton" type="button" class="button primary icon solid fa-download"
 	onclick="showCaptcha();">Download</button>
@@ -45,14 +44,14 @@
 </div>
 
 <script>
-	var captchaCompleted = false; // To track if CAPTCHA is completed
+	var captchaVerified = false; // Flag to track if CAPTCHA was completed
 
 	// This function shows the CAPTCHA when the "Download" button is clicked
 	function showCaptcha() {
 		// Show the CAPTCHA container
 		document.getElementById('recaptcha-container').style.display = 'block';
 
-		// Disable the download button during CAPTCHA completion
+		// Disable the button to prevent multiple clicks while CAPTCHA is being solved
 		document.getElementById('downloadButton').disabled = true;
 
 		// Add a listener for CAPTCHA completion
@@ -62,18 +61,18 @@
 				if (response.length === 0) {
 					alert("Please complete the CAPTCHA first.");
 				} else {
-					// If CAPTCHA is completed, enable the download button
-					captchaCompleted = true;
-					document.getElementById('downloadButton').disabled = false;
-					alert("CAPTCHA Completed! Click 'Download' again.");
+					// If CAPTCHA is completed, re-enable the download button
+					captchaVerified = true;
+					alert("CAPTCHA completed! You can now download the file.");
+					document.getElementById('downloadButton').disabled = false; // Re-enable download button
 				}
 			}
 		});
 	}
 
-	// This function triggers the file download when clicked after CAPTCHA completion
+	// This function triggers the file download when clicked again after CAPTCHA completion
 	function downloadFile() {
-		if (!captchaCompleted) {
+		if (!captchaVerified) {
 			alert("Please complete the CAPTCHA first.");
 			return; // Prevent download if CAPTCHA isn't completed
 		}
@@ -90,11 +89,14 @@
 		// Optionally, remove the link after download
 		document.body.removeChild(link);
 	}
+
+	// Attach the downloadFile function to the button
+	document.getElementById('downloadButton').addEventListener('click', downloadFile);
 </script>
-
-
-
 				
+
+
+
 						<article class="col-12 col-12-large work-item">
 							<a href="images/resume.jpg" class="image fit thumb clear"><img src="images/resume.jpg"
 									alt="" /></a>
