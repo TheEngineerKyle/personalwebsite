@@ -3116,7 +3116,7 @@ input, select, textarea {
 /* Touch */
 
 	body.is-touch .image.thumb:before {
-		opacity: 0.15 !important;
+		opacity: 0.2 !important;
 	}
 
 	body.is-touch .image.thumb:after {
@@ -3129,8 +3129,9 @@ input, select, textarea {
 	}
 
 	body.is-touch .poptrox-popup .nav-next,
-	body.is-touch .poptrox-popup .nav-previous {
-		opacity: 0.5 !important;
+	body.is-touch .poptrox-popup .nav-previous,
+	body.is-touch .poptrox-popup .closer {
+		opacity: 0 !important;
 	}
 
 /* XLarge */
