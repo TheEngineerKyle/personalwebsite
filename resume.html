@@ -37,24 +37,24 @@ https://raw.githubusercontent.com/TheEngineerKyle/personalwebsite/main/images/re
 <!-- Button to trigger CAPTCHA, with additional styling and icon -->
 
 
+					<article class="col-6 col-12-large work-item">
+					<div class="g-recaptcha" data-sitekey="6LeIa9cqAAAAAK5i-2rba9R-bE_jHd1jOqzGuNSB"></div>
 
-<div class="g-recaptcha" data-sitekey="6LeIa9cqAAAAAK5i-2rba9R-bE_jHd1jOqzGuNSB"></div>
+					<button type="button" class="button fit primary icon solid fa-download" onclick="checkRecaptcha();">Download</button>
 
-<button type="button" class="button fit primary icon solid fa-download" onclick="checkRecaptcha();">Download</button>
-
-<script>
-	function checkRecaptcha() {
-		var response = grecaptcha.getResponse();
-		console.log("CAPTCHA response:", response);  // Debugging: Check the CAPTCHA response
-		if (response.length === 0) {
-			alert("Please complete the CAPTCHA first.");
-		} else {
-			// If CAPTCHA is verified, allow download from GitHub
-			window.location.href = "https://kylelinde.com/KYLE_LINDE_2023_RESUME.pdf";  // GitHub file URL
-		}
-	}
-</script>
-
+									<script>
+										function checkRecaptcha() {
+											var response = grecaptcha.getResponse();
+											console.log("CAPTCHA response:", response);  // Debugging: Check the CAPTCHA response
+											if (response.length === 0) {
+												alert("Please complete the CAPTCHA first.");
+											} else {
+												// If CAPTCHA is verified, allow download from GitHub
+												window.location.href = "https://kylelinde.com/KYLE_LINDE_2023_RESUME.pdf";  // GitHub file URL
+											}
+										}
+										</script>
+					</article>
 
 
 
