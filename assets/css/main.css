@@ -3116,9 +3116,9 @@ input, select, textarea {
 /* Touch */
 
 	body.is-touch .image.thumb:before {
-		opacity: 0.5 !important;
+		opacity: 0 !important;
 	}
-
+/* Touch */
 	body.is-touch .image.thumb:after {
 		display: none !important;
 	}
@@ -3133,7 +3133,7 @@ input, select, textarea {
 	body.is-touch .poptrox-popup .closer {
 		opacity: 0 !important;
 	}
-
+/* Touch */
 /* XLarge */
 
 	@media screen and (max-width: 1800px) {
