@@ -181,7 +181,21 @@
 			windowMargin: (breakpoints.active('<=small') ? 0 : 50)
 		});
 
-		
+
+		$('#resume').poptrox({
+			caption: function ($a) { return $a.next('h3').text(); },
+			overlayColor: '#2c2c2c',
+			overlayOpacity: 0.85,
+			popupCloserText: '',
+			popupLoaderText: '',
+			selector: '.work-item a.image',
+			usePopupCaption: false,
+			usePopupDefaultStyling: true,
+			usePopupEasyClose: true,
+			usePopupNav: false,
+			windowMargin: (breakpoints.active('<=small') ? 0 : 50)
+		});
+
 
 	});
 
