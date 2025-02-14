@@ -5,7 +5,7 @@ const path = require('path');
 const app = express();
 app.use(express.json());
 
-const SECRET_KEY = "6LeIa9cqAAAAAJHSudqyQpd8z1OBAFLvxd4-KS6dE"; // Replace with actual secret key
+const SECRET_KEY = "6LeIa9cqAAAAAJHSudqyQpd8z1OBAFLvxd4-KS6dERE"; // Replace with your actual reCAPTCHA secret key
 
 // Verify reCAPTCHA
 app.post('/verify-captcha', async (req, res) => {
@@ -27,9 +27,9 @@ app.post('/verify-captcha', async (req, res) => {
 	}
 });
 
-// Serve the file after CAPTCHA verification
-app.get('/download-file', (req, res) => {
-	const filePath = path.join(__dirname, 'yourfile.pdf'); // Change to your file path
+// Serve the file securely after CAPTCHA validation
+app.get('/download-resume', (req, res) => {
+	const filePath = path.join(__dirname, 'images', 'resume.pdf'); // Ensure this is the correct file path
 	res.download(filePath);
 });
 
