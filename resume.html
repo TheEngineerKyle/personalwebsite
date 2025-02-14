@@ -60,7 +60,7 @@
 										}
 
 										function verifyCaptcha(token) {
-											fetch('/verify-captcha', {
+											fetch('/api/verify-captcha', {
 												method: 'POST',
 												headers: { 'Content-Type': 'application/json' },
 												body: JSON.stringify({ token })
@@ -68,12 +68,14 @@
 												.then(response => response.json())
 												.then(data => {
 													if (data.success) {
-														window.location.href = "/download-file"; // Redirect to file download
+														window.location.href = "https://github.com/TheEngineerKyle/personalwebsite/blob/main/images/resume.pdf";  // GitHub file URL
 													} else {
 														alert("CAPTCHA verification failed.");
 													}
 												})
-												.catch(error => console.error('Error:', error));
+												.catch(error => {
+													console.error('Error:', error);
+												});
 										}
 									</script>
 
@@ -141,7 +143,6 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-			<script src="assets/js/node.js"></script>
 
 	</body>
 </html>
