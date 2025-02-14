@@ -46,9 +46,9 @@
 								
 									<!-- Google reCAPTCHA -->
 									<div class="g-recaptcha" data-sitekey="6LeIa9cqAAAAAK5i-2rba9R-bE_jHd1jOqzGuNSB"></div>
-								
+									
 									<button type="button" onclick="checkRecaptcha();">Download</button>
-								
+									
 									<script>
 										function checkRecaptcha() {
 											var response = grecaptcha.getResponse();
@@ -68,7 +68,8 @@
 												.then(response => response.json())
 												.then(data => {
 													if (data.success) {
-														window.location.href = "https://github.com/TheEngineerKyle/personalwebsite/blob/main/images/resume.pdf";  // GitHub file URL
+														// Change this URL to the raw file URL for direct download
+														window.location.href = "https://raw.githubusercontent.com/TheEngineerKyle/personalwebsite/main/images/resume.pdf";
 													} else {
 														alert("CAPTCHA verification failed.");
 													}
@@ -78,6 +79,7 @@
 												});
 										}
 									</script>
+
 
 
 
