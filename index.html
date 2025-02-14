@@ -337,6 +337,40 @@
 				<div class="row">
 				<div class="col-8 col-12-small">
 					<form action="https://formspree.io/f/mnqyjqkp" method="POST">
+
+<html>
+
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://www.google.com/recaptcha/api.js?render={6LeIa9cqAAAAAK5i-2rba9R-bE_jHd1jOqzGuNSB}"></script>
+</head>
+
+
+	<button onclick="captcha()" class="btn btn-primary">click me</button>
+	<script>
+		function captcha() {
+			grecaptcha.ready(function () {
+				grecaptcha.execute("{6LeIa9cqAAAAAK5i-2rba9R-bE_jHd1jOqzGuNSB}", { action: "submit" }).then(function (token) {
+					$.ajax({
+						url: "https://formspree.io/f/mnqyjqkp}",
+						method: "POST",
+						dataType: "json",
+						data: { email: "test@email.com", message: "Hello world!", "g-recaptcha-response": token },
+						success: () => {
+							alert("Done!");
+						},
+						error: (err) => {
+							alert("Something wrong!", err);
+						},
+					});
+				});
+			});
+		}
+	</script>
+	
+
+
+
 						<div class="row gtr-uniform gtr-50">
 							<div class="col-6 col-12-xsmall"><input type="text" name="name" id="name"
 									placeholder="Name" /></div>
@@ -347,6 +381,10 @@
 							<ul class="actions">
 								<li><input type="submit" value="Send message" /></li>
 							</ul>
+
+
+
+							
 						</div>
 					</form>
 				</div>
@@ -390,6 +428,9 @@
 		<script src="assets/js/breakpoints.min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
+		<script src="assets/js/captcha.js"></script>
+		<script src="https://www.google.com/recaptcha/api.js?render=reCAPTCHA_site_key" async defer></script>
+
 	</div>
 </body>
 
