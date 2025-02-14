@@ -35,65 +35,29 @@
 
 
 <!-- Button to trigger CAPTCHA, with additional styling and icon -->
+
+
+
+<div class="g-recaptcha" data-sitekey="6LeIa9cqAAAAAK5i-2rba9R-bE_jHd1jOqzGuNSB"></div>
+
 <button id="downloadButton" type="button" class="button primary icon solid fa-download"
 	onclick="showCaptcha();">Download</button>
 
-<!-- Hidden CAPTCHA div (will be shown after the button is clicked) -->
-<div id="recaptcha-container" style="display: none;">
-	<div class="g-recaptcha" data-sitekey="6LeIa9cqAAAAAK5i-2rba9R-bE_jHd1jOqzGuNSB"></div>
-</div>
-
 <script>
-	var captchaVerified = false; // Flag to track if CAPTCHA was completed
-
-	// This function shows the CAPTCHA when the "Download" button is clicked
-	function showCaptcha() {
-		// Show the CAPTCHA container
-		document.getElementById('recaptcha-container').style.display = 'block';
-
-		// Disable the button to prevent multiple clicks while CAPTCHA is being solved
-		document.getElementById('downloadButton').disabled = true;
-
-		// Add a listener for CAPTCHA completion
-		grecaptcha.render('recaptcha-container', {
-			sitekey: '6LeIa9cqAAAAAK5i-2rba9R-bE_jHd1jOqzGuNSB',
-			callback: function (response) {
-				if (response.length === 0) {
-					alert("Please complete the CAPTCHA first.");
-				} else {
-					// If CAPTCHA is completed, re-enable the download button
-					captchaVerified = true;
-					alert("CAPTCHA completed! You can now download the file.");
-					document.getElementById('downloadButton').disabled = false; // Re-enable download button
-				}
-			}
-		});
-	}
-
-	// This function triggers the file download when clicked again after CAPTCHA completion
-	function downloadFile() {
-		if (!captchaVerified) {
+	function checkRecaptcha() {
+		var response = grecaptcha.getResponse();
+		console.log("CAPTCHA response:", response);  // Debugging: Check the CAPTCHA response
+		if (response.length === 0) {
 			alert("Please complete the CAPTCHA first.");
-			return; // Prevent download if CAPTCHA isn't completed
+		} else {
+			// If CAPTCHA is verified, allow download from GitHub
+			window.location.href = "https://raw.githubusercontent.com/TheEngineerKyle/personalwebsite/main/images/resume.pdf";  // GitHub file URL
 		}
-
-		// Create a temporary <a> tag to trigger the download
-		var link = document.createElement('a');
-		link.href = "https://raw.githubusercontent.com/TheEngineerKyle/personalwebsite/main/images/resume.pdf";  // GitHub file URL
-		link.download = "resume.pdf";  // Desired file name
-
-		// Append the link to the body and simulate a click to start the download
-		document.body.appendChild(link);
-		link.click();
-
-		// Optionally, remove the link after download
-		document.body.removeChild(link);
 	}
-
-	// Attach the downloadFile function to the button
-	document.getElementById('downloadButton').addEventListener('click', downloadFile);
 </script>
-				
+
+
+
 
 
 
