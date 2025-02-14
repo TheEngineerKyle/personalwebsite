@@ -24,7 +24,7 @@
 			<div id="main">
 				<section id="resume">
 					
-						<!--
+					<!----	
 					<ul class="actions stacked">
 						<li><a target="_blank" rel="noopener noreferrer" href="KYLE_LINDE_2023_RESUME.pdf"
 
@@ -37,27 +37,36 @@
 
 
 
+<li><button type="button" class="button fit primary icon solid fa-download" onclick="showCaptcha();">Download</button></li>
 
 
-								
-								
-						<!-- Google reCAPTCHA -->
-						<div class="g-recaptcha" data-sitekey="6LeIa9cqAAAAAK5i-2rba9R-bE_jHd1jOqzGuNSB"></div>
-						
-						<button type="button" onclick="checkRecaptcha();">Download</button>
-						
-						<script>
-							function checkRecaptcha() {
-								var response = grecaptcha.getResponse();
-								console.log("CAPTCHA response:", response);  // Debugging: Check the CAPTCHA response
-								if (response.length === 0) {
-									alert("Please complete the CAPTCHA first.");
-								} else {
-									// If CAPTCHA is verified, allow download from GitHub
-									window.location.href = "https://raw.githubusercontent.com/TheEngineerKyle/personalwebsite/main/images/resume.pdf";  // GitHub file URL
-								}
-							}
-						</script>
+<!-- Hidden CAPTCHA div (will be shown after the button is clicked) -->
+<div id="recaptcha-container" style="display: none;">
+    <div class="g-recaptcha" data-sitekey="6LeIa9cqAAAAAK5i-2rba9R-bE_jHd1jOqzGuNSB"></div>
+</div>
+
+<script>
+    function showCaptcha() {
+        // Show the CAPTCHA container
+        document.getElementById('recaptcha-container').style.display = 'block';
+
+        // Disable the button to prevent multiple clicks
+        document.querySelector('button').disabled = true;
+
+        // Add a listener for CAPTCHA completion
+        grecaptcha.render('recaptcha-container', {
+            sitekey: '6LeIa9cqAAAAAK5i-2rba9R-bE_jHd1jOqzGuNSB',
+            callback: function(response) {
+                if (response.length === 0) {
+                    alert("Please complete the CAPTCHA first.");
+                } else {
+                    // If CAPTCHA is verified, allow download
+                    window.location.href = "https://raw.githubusercontent.com/TheEngineerKyle/personalwebsite/main/images/resume.pdf";
+                }
+            }
+        });
+    }
+</script>
 
 
 
