@@ -36,46 +36,44 @@
 
 
 
-	<form>
-		<div class="g-recaptcha" data-sitekey="6LeIa9cqAAAAAK5i-2rba9R-bE_jHd1jOqzGuNSB"></div>
-		<div class="button fit primary icon solid fa-download" type="button" onclick="checkRecaptcha();">Download</div>
-	</form>
 
-	<script>
-		function checkRecaptcha() {
-			var response = grecaptcha.getResponse();
-			if (response.length == 0) {
-				//reCaptcha not verified
-				alert("Please complete CAPTCHA");
-			}
-			else {
-				//reCaptch verified
-				alert("pass");
-				<li><a target="_blank" rel="noopener noreferrer" href="KYLE_LINDE_2023_RESUME.pdf"
-					class="button fit primary icon solid fa-download">Download</a></li>
-			}
-		}
+								
+								
+							
+							
+								
+									<!-- Google reCAPTCHA -->
+									<div class="g-recaptcha" data-sitekey="6LeIa9cqAAAAAK5i-2rba9R-bE_jHd1jOqzGuNSB"></div>
+								
+									<button type="button" onclick="checkRecaptcha();">Download</button>
+								
+									<script>
+										function checkRecaptcha() {
+											var response = grecaptcha.getResponse();
+											if (response.length === 0) {
+												alert("Please complete the CAPTCHA first.");
+											} else {
+												verifyCaptcha(response);
+											}
+										}
 
-		// implement on the backend
-		function backend_API_challenge() {
-			var response = grecaptcha.getResponse();
-			$.ajax({
-				type: "POST",
-				url: 'https://www.google.com/recaptcha/api/siteverify',
-				data: { "secret": "(6LeIa9cqAAAAAJHSudqyQpd8z1OBAFLvxd4-KS6d)", "response": response, "remoteip": "localhost" },
-				contentType: 'application/x-www-form-urlencoded',
-				success: function (data) { console.log(data); }
-			});
-		}
-	</script>
-
-
-
-
-
-
-
-
+										function verifyCaptcha(token) {
+											fetch('/verify-captcha', {
+												method: 'POST',
+												headers: { 'Content-Type': 'application/json' },
+												body: JSON.stringify({ token })
+											})
+												.then(response => response.json())
+												.then(data => {
+													if (data.success) {
+														window.location.href = "/download-file"; // Redirect to file download
+													} else {
+														alert("CAPTCHA verification failed.");
+													}
+												})
+												.catch(error => console.error('Error:', error));
+										}
+									</script>
 
 
 
@@ -83,7 +81,15 @@
 
 
 
-					</ul>
+
+
+
+
+
+
+
+
+				
 						<article class="col-12 col-12-large work-item">
 							<a href="images/resume.jpg" class="image fit thumb clear"><img src="images/resume.jpg"
 									alt="" /></a>
