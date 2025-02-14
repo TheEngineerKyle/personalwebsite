@@ -19,12 +19,68 @@
 		<a href="./index"></a>
 			<div id="main">
 				<section id="resume">	
+
+
 					<ul class="actions stacked">
 <form action="?" method="POST">
 	<div class="g-recaptcha" data-sitekey="6LeIa9cqAAAAAK5i-2rba9R-bE_jHd1jOqzGuNSB"></div>
 	<br />
 	<input type="submit" value="Submit">
 </form>
+
+
+
+
+<script type="text/javascript">
+	var verifyCallback = function (response) {
+		alert(response);
+	};
+	var widgetId1;
+	var widgetId2;
+	var onloadCallback = function () {
+		// Renders the HTML element with id 'example1' as a reCAPTCHA widget.
+		// The id of the reCAPTCHA widget is assigned to 'widgetId1'.
+		widgetId1 = grecaptcha.render('example1', {
+			'sitekey': '6LeIa9cqAAAAAK5i-2rba9R-bE_jHd1jOqzGuNSB',
+			'theme': 'light'
+		});
+		widgetId2 = grecaptcha.render(document.getElementById('example2'), {
+			'sitekey': '6LeIa9cqAAAAAK5i-2rba9R-bE_jHd1jOqzGuNSB'
+		});
+		grecaptcha.render('example3', {
+			'sitekey': '6LeIa9cqAAAAAK5i-2rba9R-bE_jHd1jOqzGuNSB',
+			'callback': verifyCallback,
+			'theme': 'dark'
+		});
+	};
+</script>
+
+
+	<!-- The g-recaptcha-response string displays in an alert message upon submit. -->
+	<form action="javascript:alert(grecaptcha.getResponse(widgetId1));">
+		<div id="example1"></div>
+		<br>
+		<div class="button fit primary icon solid fa-download">Download</div>
+	</form>
+	<br>
+	<!-- Resets reCAPTCHA widgetId2 upon submit. -->
+	<form action="javascript:grecaptcha.reset(widgetId2);">
+		<li><a target="_blank" rel="noopener noreferrer" href="KYLE_LINDE_2023_RESUME.pdf"
+				class="button fit primary icon solid fa-download">Download</a></li>
+	</form>
+	<br>
+	<!-- POSTs back to the page's URL upon submit with a g-recaptcha-response POST parameter. -->
+	<form action="?" method="POST">
+		<div id="example3"></div>
+		<br>
+		<input type="submit" value="Submit">
+	</form>
+
+
+
+
+
+
 
 						<li><a target="_blank" rel="noopener noreferrer" href="KYLE_LINDE_2023_RESUME.pdf"
 								class="button fit primary icon solid fa-download">Download</a></li>
