@@ -43,41 +43,45 @@
 								
 							
 							
+								<!-- Google reCAPTCHA -->
+								<div class="g-recaptcha" data-sitekey="6LeIa9cqAAAAAK5i-2rba9R-bE_jHd1jOqzGuNSB"></div>
 								
-									<!-- Google reCAPTCHA -->
-									<div class="g-recaptcha" data-sitekey="6LeIa9cqAAAAAK5i-2rba9R-bE_jHd1jOqzGuNSB"></div>
+								<button type="button" onclick="checkRecaptcha();">Download</button>
 								
-									<button type="button" onclick="checkRecaptcha();">Download</button>
-								
-									<script>
-										function checkRecaptcha() {
-											var response = grecaptcha.getResponse();
-											if (response.length === 0) {
-												alert("Please complete the CAPTCHA first.");
-											} else {
-												verifyCaptcha(response);
-											}
+								<script>
+									function checkRecaptcha() {
+										var response = grecaptcha.getResponse();
+										console.log("CAPTCHA response:", response);  // Debugging: Check the CAPTCHA response
+										if (response.length === 0) {
+											alert("Please complete the CAPTCHA first.");
+										} else {
+											verifyCaptcha(response);
 										}
+									}
 
-										function verifyCaptcha(token) {
-											fetch('/api/verify-captcha', {
-												method: 'POST',
-												headers: { 'Content-Type': 'application/json' },
-												body: JSON.stringify({ token })
+									function verifyCaptcha(token) {
+										console.log("Sending CAPTCHA token to server...");  // Debugging: Check if token is sent
+										fetch('/api/verify-captcha', {
+											method: 'POST',
+											headers: { 'Content-Type': 'application/json' },
+											body: JSON.stringify({ token })
+										})
+											.then(response => response.json())
+											.then(data => {
+												console.log("CAPTCHA verification result:", data);  // Debugging: Check server response
+												if (data.success) {
+													console.log("Redirecting to file...");
+													window.location.href = "https://raw.githubusercontent.com/TheEngineerKyle/personalwebsite/main/images/resume.pdf";  // GitHub file URL
+												} else {
+													alert("CAPTCHA verification failed.");
+												}
 											})
-												.then(response => response.json())
-												.then(data => {
-													if (data.success) {
-														window.location.href = "https://raw.githubusercontent.com/TheEngineerKyle/personalwebsite/main/images/resume.pdf";  // GitHub file URL
-													} else {
-														alert("CAPTCHA verification failed.");
-													}
-												})
-												.catch(error => {
-													console.error('Error:', error);
-												});
-										}
-									</script>
+											.catch(error => {
+												console.error('Error:', error);  // Debugging: Check if there’s an error with the fetch request
+											});
+									}
+								</script>
+
 
 
 
