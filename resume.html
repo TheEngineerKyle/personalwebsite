@@ -42,11 +42,12 @@
 </div>
 
 <script>
+	// This function shows the CAPTCHA
 	function showCaptcha() {
 		// Show the CAPTCHA container
 		document.getElementById('recaptcha-container').style.display = 'block';
 
-		// Disable the button to prevent multiple clicks
+		// Disable the button to prevent multiple clicks while CAPTCHA is being solved
 		document.getElementById('downloadButton').disabled = true;
 
 		// Add a listener for CAPTCHA completion
@@ -56,27 +57,27 @@
 				if (response.length === 0) {
 					alert("Please complete the CAPTCHA first.");
 				} else {
-					// If CAPTCHA is verified, initiate file download
-					downloadFile();
+					// Once CAPTCHA is completed, enable the download button
+					document.getElementById('downloadButton').disabled = false;
 				}
 			}
 		});
 	}
 
+	// This function triggers the file download
 	function downloadFile() {
-		// Create a temporary <a> tag to trigger the download
 		var link = document.createElement('a');
 		link.href = "https://raw.githubusercontent.com/TheEngineerKyle/personalwebsite/main/images/resume.pdf";  // GitHub file URL
 		link.download = "resume.pdf";  // You can specify the desired file name
 
-		// Append the link to the document body and simulate a click to start the download
+		// Append the link to the body and trigger the download
 		document.body.appendChild(link);
 		link.click();
 
-		// No need to remove the link or re-enable the button now
+		// Optionally, remove the link if needed
+		document.body.removeChild(link);
 	}
 </script>
-
 
 
 
