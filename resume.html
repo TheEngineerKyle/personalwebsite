@@ -34,8 +34,6 @@
 						-->
 
 
-
-
 <!-- Button to trigger CAPTCHA, with additional styling and icon -->
 <button id="downloadButton" type="button" class="button primary icon solid fa-download"
 	onclick="showCaptcha();">Download</button>
@@ -73,11 +71,16 @@
 		link.href = "https://raw.githubusercontent.com/TheEngineerKyle/personalwebsite/main/images/resume.pdf";  // GitHub file URL
 		link.download = "resume.pdf";  // You can specify the desired file name
 		document.body.appendChild(link);  // Append the link to the body
-		link.click();  // Simulate a click on the link to trigger the download
-		document.body.removeChild(link);  // Remove the link after the download starts
 
-		// Re-enable the button after the download begins
-		document.getElementById('downloadButton').disabled = false;
+		// Trigger the download
+		link.click();  // Simulate a click on the link to trigger the download
+
+		// Ensure the button is re-enabled **after** the download starts
+		setTimeout(function () {
+			document.getElementById('downloadButton').disabled = false;
+		}, 1000); // A small delay to ensure the download is triggered before enabling the button
+
+		document.body.removeChild(link);  // Remove the link after the download starts
 	}
 </script>
 
