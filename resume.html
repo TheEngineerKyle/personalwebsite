@@ -6,6 +6,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="shortcut icon" type="image/png" href="images/favicon.png">
+		<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+		<script src='https://www.google.com/recaptcha/api.js' async defer></script>
 	</head>
 	<body class="is-preload">
 		<!-- Header -->
@@ -19,71 +21,63 @@
 		<a href="./index"></a>
 			<div id="main">
 				<section id="resume">	
-
-
 					<ul class="actions stacked">
-<form action="?" method="POST">
-	<div class="g-recaptcha" data-sitekey="6LeIa9cqAAAAAK5i-2rba9R-bE_jHd1jOqzGuNSB"></div>
-	<br />
-	<input type="submit" value="Submit">
-</form>
-
-
-
-
-<script type="text/javascript">
-	var verifyCallback = function (response) {
-		alert(response);
-	};
-	var widgetId1;
-	var widgetId2;
-	var onloadCallback = function () {
-		// Renders the HTML element with id 'example1' as a reCAPTCHA widget.
-		// The id of the reCAPTCHA widget is assigned to 'widgetId1'.
-		widgetId1 = grecaptcha.render('example1', {
-			'sitekey': '6LeIa9cqAAAAAK5i-2rba9R-bE_jHd1jOqzGuNSB',
-			'theme': 'light'
-		});
-		widgetId2 = grecaptcha.render(document.getElementById('example2'), {
-			'sitekey': '6LeIa9cqAAAAAK5i-2rba9R-bE_jHd1jOqzGuNSB'
-		});
-		grecaptcha.render('example3', {
-			'sitekey': '6LeIa9cqAAAAAK5i-2rba9R-bE_jHd1jOqzGuNSB',
-			'callback': verifyCallback,
-			'theme': 'dark'
-		});
-	};
-</script>
-
-
-	<!-- The g-recaptcha-response string displays in an alert message upon submit. -->
-	<form action="javascript:alert(grecaptcha.getResponse(widgetId1));">
-		<div id="example1"></div>
-		<br>
-		<div class="button fit primary icon solid fa-download">Download</div>
-	</form>
-	<br>
-	<!-- Resets reCAPTCHA widgetId2 upon submit. -->
-	<form action="javascript:grecaptcha.reset(widgetId2);">
-		<li><a target="_blank" rel="noopener noreferrer" href="KYLE_LINDE_2023_RESUME.pdf"
-				class="button fit primary icon solid fa-download">Download</a></li>
-	</form>
-	<br>
-	<!-- POSTs back to the page's URL upon submit with a g-recaptcha-response POST parameter. -->
-	<form action="?" method="POST">
-		<div id="example3"></div>
-		<br>
-		<input type="submit" value="Submit">
-	</form>
-
-
-
-
-
-
-
 						<li><a target="_blank" rel="noopener noreferrer" href="KYLE_LINDE_2023_RESUME.pdf"
 								class="button fit primary icon solid fa-download">Download</a></li>
+
+
+
+
+
+
+
+
+	<form>
+		<input type="text">
+		<div class="g-recaptcha" data-sitekey="6LeIa9cqAAAAAK5i-2rba9R-bE_jHd1jOqzGuNSB"></div>
+		<button type="button" onclick="checkRecaptcha();">Submit</button>
+	</form>
+
+	<script>
+		function checkRecaptcha() {
+			var response = grecaptcha.getResponse();
+			if (response.length == 0) {
+				//reCaptcha not verified
+				alert("no pass");
+			}
+			else {
+				//reCaptch verified
+				alert("pass");
+			}
+		}
+
+		// implement on the backend
+		function backend_API_challenge() {
+			var response = grecaptcha.getResponse();
+			$.ajax({
+				type: "POST",
+				url: 'https://www.google.com/recaptcha/api/siteverify',
+				data: { "secret": "(6LeIa9cqAAAAAJHSudqyQpd8z1OBAFLvxd4-KS6d)", "response": response, "remoteip": "localhost" },
+				contentType: 'application/x-www-form-urlencoded',
+				success: function (data) { console.log(data); }
+			});
+		}
+	</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 					</ul>
 						<article class="col-12 col-12-large work-item">
 							<a href="images/resume.jpg" class="image fit thumb clear"><img src="images/resume.jpg"
