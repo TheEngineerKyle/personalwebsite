@@ -36,45 +36,38 @@
 
 
 
-
-<li><button type="button" class="button fit primary icon solid fa-download" onclick="showCaptcha();">Download</button></li>
-
+<ul button type="button" class="button primary icon solid fa-download" onclick="showCaptcha();">Download</ul>
 
 <!-- Hidden CAPTCHA div (will be shown after the button is clicked) -->
 <div id="recaptcha-container" style="display: none;">
-    <div class="g-recaptcha" data-sitekey="6LeIa9cqAAAAAK5i-2rba9R-bE_jHd1jOqzGuNSB"></div>
+	<div class="g-recaptcha" data-sitekey="6LeIa9cqAAAAAK5i-2rba9R-bE_jHd1jOqzGuNSB"></div>
 </div>
 
 <script>
-    function showCaptcha() {
-        // Show the CAPTCHA container
-        document.getElementById('recaptcha-container').style.display = 'block';
+	function showCaptcha() {
+		// Show the CAPTCHA container
+		document.getElementById('recaptcha-container').style.display = 'block';
 
-        // Disable the button to prevent multiple clicks
-        document.querySelector('button').disabled = true;
+		// Disable the button to prevent multiple clicks
+		document.getElementById('downloadButton').disabled = true;
 
-        // Add a listener for CAPTCHA completion
-        grecaptcha.render('recaptcha-container', {
-            sitekey: '6LeIa9cqAAAAAK5i-2rba9R-bE_jHd1jOqzGuNSB',
-            callback: function(response) {
-                if (response.length === 0) {
-                    alert("Please complete the CAPTCHA first.");
-                } else {
-                    // If CAPTCHA is verified, allow download
-                    window.location.href = "https://raw.githubusercontent.com/TheEngineerKyle/personalwebsite/main/images/resume.pdf";
-                }
-            }
-        });
-    }
+		// Add a listener for CAPTCHA completion
+		grecaptcha.render('recaptcha-container', {
+			sitekey: '6LeIa9cqAAAAAK5i-2rba9R-bE_jHd1jOqzGuNSB',
+			callback: function (response) {
+				if (response.length === 0) {
+					alert("Please complete the CAPTCHA first.");
+				} else {
+					// If CAPTCHA is verified, allow download
+					window.location.href = "https://raw.githubusercontent.com/TheEngineerKyle/personalwebsite/main/images/resume.pdf";
+
+					// Re-enable the button after download begins
+					document.getElementById('downloadButton').disabled = false;
+				}
+			}
+		});
+	}
 </script>
-
-
-
-
-
-
-
-
 
 
 
