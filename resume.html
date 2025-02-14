@@ -1,114 +1,79 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<title>Kyle Linde</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="shortcut icon" type="image/png" href="images/favicon.png">
-		<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-		<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-		
-		
-	</head>
-	<body class="is-preload">
-		<!-- Header -->
-			<header id="header">
-				<div class="inner">
-					<a href="/" class="image avatar"><img src="images/kyle/avatar.jpg" alt="" /></a>
-					<h1>Hi, I'm <strong>Kyle Linde</strong>.<br />
-					I'm an engineer, designer, Uncle, marathoner and <a href="/#aboutme">more</a>.</h1>
-				</div>
-			</header>
-		<a href="./index"></a>
-			<div id="main">
-				<section id="resume">
-					
-					<!----	
-					<ul class="actions stacked">
-						<li><a target="_blank" rel="noopener noreferrer" href="KYLE_LINDE_2023_RESUME.pdf"
 
+<head>
+	<title>Kyle Linde</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<link rel="shortcut icon" type="image/png" href="images/favicon.png">
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body class="is-preload">
+	<!-- Header -->
+	<header id="header">
+		<div class="inner">
+			<a href="/" class="image avatar"><img src="images/kyle/avatar.jpg" alt="" /></a>
+			<h1>Hi, I'm <strong>Kyle Linde</strong>.<br />
+				I'm an engineer, designer, Uncle, marathoner and <a href="/#aboutme">more</a>.</h1>
+		</div>
+	</header>
+	<a href="./index"></a>
+	<div id="main">
+		<section id="resume">
+			<article class="col-6 col-12-large work-item">
+				<div class="g-recaptcha" data-sitekey="6LeIa9cqAAAAAK5i-2rba9R-bE_jHd1jOqzGuNSB"></div>
+				<button type="button" class="button fit primary icon solid fa-download"
+					onclick="checkRecaptcha();">Download</button>
+			</article>
+			<article class="col-12 col-12-large work-item">
+				<a href="images/resume.jpg" class="image fit thumb clear"><img src="images/resume.jpg" alt="" /></a>
+			</article>
+			<ul class="actions small">
+				<li><a href="javascript:window.history.back()" class="button small">Back</a></li>
+			</ul>
 
-								class="button fit primary icon solid fa-download">Download</a></li>
-https://raw.githubusercontent.com/TheEngineerKyle/personalwebsite/main/images/resume.pdf
-						-->
+		</section>
+	</div>
+	<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="labeled-icons">
+				<li>
+					<h3 class="icon"><span class="label">Phone</span></h3>
+					<a href="tel:+12014487298">201-448-7298</a>
+				</li>
+				<li>
+					<h3 class="icon"><span class="label">Email</span></h3>
+					<a href="mailto:kyle@kylelinde.com">kyle@kylelinde.com</a>
+				</li>
+			</ul>
+			<ul class="icons">
+				<li><a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/kylelinde/"
+						class="icon brands fa-instagram"><span class="label">strava</span></a></li>
+				<li><a target="_blank" rel="noopener noreferrer" href="https://www.strava.com/athletes/kylelinde"
+						class="icon brands fa-strava"><span class="label">strava</span></a></li>
+				<li><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/kylelinde/"
+						class="icon brands fa-linkedin"><span class="label">linkedin</span></a></li>
+				<li><a href="mailto:kyle@kylelinde.com" class="icon solid fa-envelope"><span
+							class="label">Email</span></a>
+				</li>
+			</ul>
+			<ul class="copyright">
+				<li>&copy; Kyle Linde 2025</li>
+			</ul>
+		</div>
+	</footer>
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.poptrox.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
+</body>
 
-<!-- Button to trigger CAPTCHA, with additional styling and icon -->
-
-
-					<article class="col-6 col-12-large work-item">
-					<div class="g-recaptcha" data-sitekey="6LeIa9cqAAAAAK5i-2rba9R-bE_jHd1jOqzGuNSB"></div>
-
-					<button type="button" class="button fit primary icon solid fa-download" onclick="checkRecaptcha();">Download</button>
-
-									<script>
-										function checkRecaptcha() {
-											var response = grecaptcha.getResponse();
-											console.log("CAPTCHA response:", response);  // Debugging: Check the CAPTCHA response
-											if (response.length === 0) {
-												alert("Please complete the CAPTCHA first.");
-											} else {
-												// If CAPTCHA is verified, allow download from GitHub
-												window.location.href = "https://kylelinde.com/KYLE_LINDE_2023_RESUME.pdf";  // GitHub file URL
-											}
-										}
-										</script>
-					</article>
-
-
-
-
-
-						<article class="col-12 col-12-large work-item">
-							<a href="images/resume.jpg" class="image fit thumb clear"><img src="images/resume.jpg"
-									alt="" /></a>
-						</article>
-							<ul class="actions small">
-								<li><a href="javascript:window.history.back()" class="button small">Back</a></li>
-							</ul>
-							
-				</section>
-			</div>
-		<!-- Footer -->
-				<footer id="footer">
-					<div class="inner">
-						<ul class="labeled-icons">
-				
-				
-							<li>
-								<h3 class="icon"><span class="label">Phone</span></h3>
-								<a href="tel:+12014487298">201-448-7298</a>
-							</li>
-							<li>
-								<h3 class="icon"><span class="label">Email</span></h3>
-								<a href="mailto:kyle@kylelinde.com">kyle@kylelinde.com</a>
-							</li>
-						</ul>
-						<ul class="icons">
-							<li><a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/kylelinde/"
-									class="icon brands fa-instagram"><span class="label">strava</span></a></li>
-							<li><a target="_blank" rel="noopener noreferrer" href="https://www.strava.com/athletes/kylelinde"
-									class="icon brands fa-strava"><span class="label">strava</span></a></li>
-							<li><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/kylelinde/"
-									class="icon brands fa-linkedin"><span class="label">linkedin</span></a></li>
-							<li><a href="mailto:kyle@kylelinde.com" class="icon solid fa-envelope"><span class="label">Email</span></a>
-							</li>
-						</ul>
-				
-						<ul class="copyright">
-							<li>&copy; Kyle Linde 2025</li>
-						</ul>
-					</div>
-				</footer>
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.poptrox.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-			<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
-	</body>
 </html>

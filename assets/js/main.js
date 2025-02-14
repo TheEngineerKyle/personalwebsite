@@ -54,7 +54,7 @@
 
 
 
-		
+
 
 	// Breakpoints.
 	breakpoints({
@@ -106,39 +106,36 @@
 	if (settings.parallax) {
 
 		breakpoints.on('<=medium', function () {
-
 			$window.off('scroll.strata_parallax');
 			$header.css('background-position', '');
-
 		});
-
 		breakpoints.on('>medium', function () {
-
 			$header.css('background-position', 'left 0px');
-
 			$window.on('scroll.strata_parallax', function () {
 				$header.css('background-position', 'left ' + (-1 * (parseInt($window.scrollTop()) / settings.parallaxFactor)) + 'px');
 			});
-
 		});
-
 		$window.on('load', function () {
 			$window.triggerHandler('scroll');
 		});
-
 	}
 
-	// Main Sections.
+	// RECAPTCHA.
+	function checkRecaptcha() {
+		var response = grecaptcha.getResponse();
+		console.log("CAPTCHA response:", response);  // Debugging: Check the CAPTCHA response
+		if (response.length === 0) {
+			alert("Please complete the CAPTCHA first.");
+		} else {
+			// If CAPTCHA is verified, allow download from GitHub
+			window.location.href = "https://kylelinde.com/KYLE_LINDE_2023_RESUME.pdf";  // GitHub file URL
+		}
+	}
 
 	// Lightbox gallery.
 
-
-
-
 	$window.on('load', function () {
-
 		$('#two').poptrox({
-
 			caption: function ($a) { return $a.next('h3').text(); },
 			overlayColor: '#2c2c2c',
 			overlayOpacity: 0.85,
@@ -151,7 +148,6 @@
 			usePopupNav: true,
 			windowMargin: (breakpoints.active('<=small') ? 0 : 50)
 		});
-
 		$('#anysis').poptrox({
 			caption: function ($a) { return $a.next('h3').text(); },
 			overlayColor: '#2c2c2c',
@@ -165,8 +161,6 @@
 			usePopupNav: true,
 			windowMargin: (breakpoints.active('<=small') ? 0 : 50)
 		});
-
-
 		$('#projects').poptrox({
 			caption: function ($a) { return $a.next('h3').text(); },
 			overlayColor: '#2c2c2c',
@@ -180,8 +174,6 @@
 			usePopupNav: true,
 			windowMargin: (breakpoints.active('<=small') ? 0 : 50)
 		});
-
-
 		$('#resume').poptrox({
 			caption: function ($a) { return $a.next('h3').text(); },
 			overlayColor: '#000000',
@@ -195,20 +187,5 @@
 			usePopupNav: false,
 			windowMargin: (breakpoints.active('<=small') ? 0 : 50)
 		});
-
-
 	});
-
-
-
-
-
-
-
-
-
-
-
-
-
 })(jQuery);
