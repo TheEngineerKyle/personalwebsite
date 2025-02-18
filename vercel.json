@@ -8,9 +8,7 @@
         }
     ],
     "routes": [
-        {
-            "handle": "filesystem"
-        },
+        
         {
             "src": "/.*",
             "status": 404,
