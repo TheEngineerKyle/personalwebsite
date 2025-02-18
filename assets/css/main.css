@@ -2223,6 +2223,11 @@ center-xy {
 
 /* ------ ^ opacity defailt 0.5----- */
 
+		.image.resume {
+			max-width: 70%;
+			max-height: 70%;
+		}
+
 		.image.thumb {
 			text-align: center;
 		}
