@@ -23,30 +23,11 @@
 	<a href="./index"></a>
 	<div id="main">
 		<section id="resume">
+			<!---
 			<ul class="actions small">
 				<li><a href="javascript:window.history.back()" class="button small">Back</a></li>
 			</ul>
-
-			<!--
-			<article class="col-6 col-12-large work-item">
-				<div class="g-recaptcha" data-sitekey="6LeIa9cqAAAAAK5i-2rba9R-bE_jHd1jOqzGuNSB"></div>
-				<button type="button" class="button fit primary icon solid fa-download"
-					onclick="checkRecaptcha();">Download</button>
-			</article>
-			<script>
-				function checkRecaptcha() {
-					var response = grecaptcha.getResponse();
-					console.log("CAPTCHA response:", response);  // Debugging: Check the CAPTCHA response
-					if (response.length === 0) {
-						alert("Please complete the CAPTCHA first.");
-					} else {
-						// If CAPTCHA is verified, allow download from GitHub
-						window.location.href = "https://www.kylelinde.com/KYLE_LINDE_2023_RESUME.pdf";  // GitHub file URL
-					}
-				}
-			</script>
-
-			-->
+			--->
 			<article class="col-12 col-12-large work-item">
 				<a href="images/resume.jpg" class="image fit thumb clear"><img src="images/resume.jpg" alt="" /></a>
 			</article>
@@ -88,7 +69,50 @@
 
 
 		</section>
+
+		<section id="messageme">
+			<h2>Message me</h2>
+			<p>I am always open to new opportunities and collaborations. If you have a project or idea that you think we
+				could work on together, don't hesitate to reach out to me. I would love to hear from you.</p>
+			<!--
+						<div class="col-4 col-12-small">
+							<ul class="labeled-icons">
+								<li>
+									<h3 class="icon solid fa-mobile-alt"><span class="label">Phone</span></h3>
+									<a href="tel:+12014487298">201-448-7298</a>
+								</li>
+								<li>
+									<h3 class="icon solid fa-envelope"><span class="label">Email</span></h3>
+									<a href="mailto:kyle@kylelinde.com">kyle@kylelinde.com</a>
+								</li>
+							</ul>
+							</div>
+					-->
+			<div class="row">
+				<div class="col-8 col-12-small">
+					<form action="https://formspree.io/f/mnqyjqkp" method="POST">
+						<div class="row gtr-uniform gtr-50">
+							<div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Name" />
+							</div>
+							<div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Email" />
+							</div>
+							<div class="col-12"><textarea name="message" id="message" placeholder="Message" rows="4"></textarea>
+							</div>
+							<ul class="actions">
+								<li><input type="submit" value="Send message" /></li>
+							</ul>
+		
+		
+		
+						</div>
+					</form>
+				</div>
+			</div>
+		</section>
 	</div>
+
+
+	
 	<!-- Footer -->
 	<footer id="footer">
 		<div class="inner">
