@@ -1,21 +1,23 @@
 {
-    "version": 2,
     "cleanUrls": true,
-    "builds": [
+    "redirects": [
         {
-            "src": "api/*.js",
-            "use": "@vercel/node"
+            "source": "/404",
+            "destination": "/404.html",
+            "statusCode": 404
         }
     ],
     "routes": [
         {
-            "src": "/api/(.*)",
-            "dest": "/api/$1"
+            "handle": "filesystem"
         },
         {
-            "src": "/(.*)",
-            "dest": "/404.html",
-            "status": 404
+            "src": "/.*",
+            "status": 404,
+            "dest": "/404.html"
         }
-    ]
+    ],
+    "static": {
+        "directory": "public"
+    }
 }
