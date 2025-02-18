@@ -16,8 +16,5 @@
             "status": 404,
             "dest": "/404.html"
         }
-    ],
-    "static": {
-        "directory": "public"
-    }
+    ]
 }
