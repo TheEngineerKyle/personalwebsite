@@ -77,6 +77,29 @@ input, select, textarea {
 
 
 
+center-xy {
+  
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  position: absolute;
+  display: flex;
+    justify-content: center;
+            align-items: center;
+            background-color: #f4f4f4;
+  
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -281,11 +304,29 @@ input, select, textarea {
 
 /* Container */
 
-	.container {
-		margin: 0 auto;
-		max-width: calc(100% - 4em);
-		width: 100%;
-	}
+		.errorbody {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			height: 100vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background-color: #f4f4f4;
+			}
+
+		.errorcontainer {
+			text-align: center;
+			background-color: #fff;
+			padding: 50px;
+			border-radius: 8px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+		}
+
+		.container {
+			margin: 0 auto;
+			max-width: calc(100% - 4em);
+			width: 100%;
+		}
 
 		.container.xsmall {
 			width: 25%;
