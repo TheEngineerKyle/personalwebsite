@@ -6,13 +6,5 @@
             "destination": "/404.html",
             "statusCode": 404
         }
-    ],
-    "routes": [
-        
-        {
-            "src": "/.*",
-            "status": 404,
-            "dest": "/404.html"
-        }
     ]
 }
