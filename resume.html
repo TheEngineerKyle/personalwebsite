@@ -23,6 +23,9 @@
 	<a href="./index"></a>
 	<div id="main">
 		<section id="resume">
+			<ul class="actions small">
+				<li><a href="javascript:window.history.back()" class="button small">Back</a></li>
+			</ul>
 
 			<!--
 			<article class="col-6 col-12-large work-item">
@@ -47,9 +50,40 @@
 			<article class="col-12 col-12-large work-item">
 				<a href="images/resume.jpg" class="image fit thumb clear"><img src="images/resume.jpg" alt="" /></a>
 			</article>
-			<ul class="actions small">
-				<li><a href="javascript:window.history.back()" class="button small">Back</a></li>
-			</ul>
+			
+			
+						<article class="col-6 col-12-large work-item">
+							<!-- Initially hidden reCAPTCHA -->
+							<div id="recaptcha-container" style="display: none;">
+								<div class="g-recaptcha" data-sitekey="6LeIa9cqAAAAAK5i-2rba9R-bE_jHd1jOqzGuNSB"
+									data-callback="verifyRecaptcha"></div>
+							</div>
+						
+							<!-- Download button -->
+							<button type="button" class="button primary icon solid fa-download" onclick="showRecaptcha();">
+								Download
+							</button>
+						</article>
+						
+						<!-- reCAPTCHA script -->
+						<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+						
+						<script>
+							function showRecaptcha() {
+								// Show the CAPTCHA when the button is clicked
+								document.getElementById("recaptcha-container").style.display = "block";
+							}
+
+							function verifyRecaptcha() {
+								// This function is triggered when CAPTCHA is completed
+								window.location.href = "https://www.kylelinde.com/KYLE_LINDE_2023_RESUME.pdf"; // Redirect to file
+							}
+						</script>
+
+
+
+
+
 
 		</section>
 	</div>
